@@ -78,7 +78,7 @@ namespace Estranged.Lfs.Api.Filters
 
             try
             {
-                await authenticator.Authenticate(username, password, GetRequiredPermission(context.HttpContext.Request), CancellationToken.None).ConfigureAwait(false);
+                await authenticator.Authenticate(username, password, LfsPermission.Read, CancellationToken.None).ConfigureAwait(false);
             }
             catch (Exception e)
             {
